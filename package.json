@@ -5,6 +5,9 @@
   "main": "index.js",
   "scripts": {
     "make": "npx knex migrate:make database --migrations-directory db/migrations",
+    "latest": "npx knex migrate:latest --knexfile db/knexfile.js",
+    "rollback": "npx knex migrate:rollback --knexfile db/knexfile.js",
+    "seed": "npx knex seed:run --knexfile db/knexfile.js",
     "dev": "nodemon index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
