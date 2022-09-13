@@ -2,6 +2,8 @@
  * @param { import("knex").Knex } knex
  * @returns { Promise<void> }
  */
+const testImage = require("../test-asset/testImage");
+
 exports.seed = async function (knex) {
   // Deletes ALL existing entries
   await knex("Members").del();
@@ -37,7 +39,13 @@ exports.seed = async function (knex) {
     { id: 17, name: "LJ", base64_image: null, social_list: 17, rank: 5 },
     { id: 18, name: "Selena", base64_image: null, social_list: 18, rank: 5 },
     { id: 19, name: "Bailey R.", base64_image: null, social_list: 19, rank: 5 },
-    { id: 20, name: "Envoilum", base64_image: null, social_list: 20, rank: 8 },
+    {
+      id: 20,
+      name: "Envoilum",
+      base64_image: testImage,
+      social_list: 20,
+      rank: 8
+    },
     { id: 21, name: "Hylishia", base64_image: null, social_list: 21, rank: 8 },
     { id: 22, name: "Clovis", base64_image: null, social_list: 22, rank: 8 }
   ]);
