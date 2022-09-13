@@ -20,7 +20,7 @@ exports.up = function (knex) {
     .createTable("Members", (table) => {
       table.increments("id");
       table.string("name").unique().notNullable();
-      table.string("base64_image");
+      table.text("base64_image");
       table
         .integer("social_list")
         .references("id")
@@ -31,7 +31,8 @@ exports.up = function (knex) {
         .integer("rank")
         .references("id")
         .inTable("Member_Rank")
-        .notNullable();
+        .notNullable()
+        .onDelete("CASCADE");
     });
 };
 
